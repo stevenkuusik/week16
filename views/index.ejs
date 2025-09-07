@@ -194,7 +194,7 @@
 
     <div class="top">
       <div class="profile">
-        <img src="spongebob.png" alt="Profiil">
+        <img src="/<%= cv.profiil %>" alt="Profiil" />
         <div class="profile-info">
           <h2><%= cv.nimi %> <%= cv.perekonnanimi %></h2>
           <div class="contact-row"><%= cv.asukoht %></div>
@@ -241,7 +241,7 @@
           <% }) %>
         </div>
 
-        <img id="carousel-img" class="chart-img" src="image1.png" alt="Pilt">
+        <img id="carousel-img" class="chart-img" src="/<%= cv.karussell[0] %>" alt="Pilt">
         <div class="social"></div>
       </div>
 
@@ -270,11 +270,11 @@
             <p><b>Praktikale võimalik astuda:</b> <%= cv.praktika %></p>
           </div>
           <div class="social">
-            <a href="https://instagram.com" target="_blank">
-              <img src="instanupp.png" alt="Instagram">
-            </a>
-            <a href="https://facebook.com" target="_blank">
-              <img src="fbikoon.png" alt="Facebook">
+             <a href="https://instagram.com" target="_blank">
+                <img src="/<%= cv.social.instagram %>" alt="Instagram">
+             </a>
+                <a href="https://facebook.com" target="_blank">
+             <img src="/<%= cv.social.facebook %>" alt="Facebook">
             </a>
           </div>
         </div>
@@ -283,18 +283,6 @@
   </div>
 
 <script>
-    const images = [
-      "image1.png",
-      "image2.png",
-    ];
-
-    let index = 0;
-    const carouselImg = document.getElementById("carousel-img");
-
-    carouselImg.addEventListener("click", () => {
-      index = (index + 1) % images.length;
-      carouselImg.src = images[index];
-    });
-  </script>
-</body>
-</html>
+  window.carouselImages = <%- JSON.stringify(cv.karussell) %>;
+</script>
+<script src="/script.js"></script>

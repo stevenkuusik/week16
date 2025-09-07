@@ -2,6 +2,7 @@
   "nimi": "Steven",
   "perekonnanimi": "Kuusik",
   "vanus": 22,
+  "profiil": "spongebob.png",
   "asukoht": "Tallinn",
   "kontakt": {
     "telefon": "56993559",
@@ -33,5 +34,12 @@
   "norgad": ["Vähe kogemust paljude pinkidega (koolis ainult Haasi freespingid ja treipingid)"],
   "ajateenistus": "Läbitud 2022–2023",
   "praktika": "9.06.2025 – 7.07.2025",
-  "pilt": "image1.jpg"
+  "social": {
+    "instagram": "instanupp.png",
+    "facebook": "fbikoon.png"
+  },
+  "karussell": [
+    "image1.png",
+    "image2.png"
+  ]
 }
