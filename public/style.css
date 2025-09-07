@@ -12,7 +12,7 @@
 
     <div class="top">
       <div class="profile">
-        <img src="/Spongebob.png" alt="Profiil">
+        <img src="spongebob.png" alt="Profiil">
         <div class="profile-info">
           <h2><%= cv.nimi %> <%= cv.perekonnanimi %></h2>
 
