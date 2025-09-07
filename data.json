@@ -1,0 +1,38 @@
+{
+  "nimi": "Steven",
+  "perekonnanimi": "Kuusik",
+  "vanus": 22,
+  "asukoht": "Tallinn",
+  "kontakt": {
+    "telefon": "56993559",
+    "email": "kuusiksteven@gmail.com",
+    "aadress": "Siidisaba tn 7, Tallinn"
+  },
+  "juhiload": ["B", "A1"],
+  "keeled": [
+    { "nimi": "Eesti", "tase": "emakeel" },
+    { "nimi": "Inglise", "tase": "heal tasemel" }
+  ],
+  "oskused": [
+    { "nimi": "Mastercam", "tase": "keskmine" },
+    { "nimi": "MS Word, Excel", "tase": "keskmine" },
+    { "nimi": "Solid Edge", "tase": "keskmine" }
+  ],
+  "huvialad": ["Klassikaline jõutõstmine"],
+  "haridus": [
+    { "kool": "Tallinna Tehnikakõrgkool", "aasta": "2023" },
+    { "kool": "Hiiumaa Gümnaasium", "aasta": "2020–2022" },
+    { "kool": "Palade põhikool", "aasta": "2017–2019" },
+    { "kool": "Käina kool", "aasta": "2010–2016" }
+  ],
+  "tootamine": [
+    { "firma": "WÜRTH AS", "amet": "Laotööline", "aasta": "2024", "kirjeldus": "Komplekteerimine, pakkendamine" },
+    { "firma": "Tariston AS", "amet": "Teetööline", "aasta": "2021", "kirjeldus": "Teedeehitus" }
+  ],
+  "tugevad": ["Õpihimu", "kohusetundlikkus", "kannatlikkus", "meeldib meeskonnatöö"],
+  "norgad": ["Vähe kogemust paljude pinkidega (koolis ainult Haasi freespingid ja treipingid)"],
+  "ajateenistus": "Läbitud 2022–2023",
+  "praktika": "9.06.2025 – 7.07.2025"
+"pilt": "/image 1.jpg"
+
+} 
