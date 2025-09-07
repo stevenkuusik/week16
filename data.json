@@ -1,9 +1,9 @@
 {
-  "nimi": "Steven",
-  "perekonnanimi": "Kuusik",
+  "steven": "Steven",
+  "kuusik": "Kuusik",
   "vanus": 22,
-  "profiil": "spongebob.png",
   "asukoht": "Tallinn",
+  "profiil": "spongebob.png",
   "kontakt": {
     "telefon": "56993559",
     "email": "kuusiksteven@gmail.com",
@@ -14,30 +14,45 @@
     { "nimi": "Eesti", "tase": "emakeel" },
     { "nimi": "Inglise", "tase": "heal tasemel" }
   ],
-  "oskused": [
-    { "nimi": "Mastercam", "tase": "keskmine" },
-    { "nimi": "MS Word, Excel", "tase": "keskmine" },
-    { "nimi": "Solid Edge", "tase": "keskmine" }
+  "arvutioskused": [
+    "Mastercam — keskmine",
+    "MS Word, Excel — keskmine",
+    "Solid Edge — keskmine"
   ],
-  "huvialad": ["Klassikaline jõutõstmine"],
+  "huvialad": [
+    "Klassikaline jõutõstmine"
+  ],
   "haridus": [
     { "kool": "Tallinna Tehnikakõrgkool", "aasta": "2023" },
     { "kool": "Hiiumaa Gümnaasium", "aasta": "2020–2022" },
-    { "kool": "Palade põhikool", "aasta": "2017–2019" },
-    { "kool": "Käina kool", "aasta": "2010–2016" }
+    { "kool": "Palade Põhikool", "aasta": "2017–2019" },
+    { "kool": "Käina Kool", "aasta": "2010–2016" }
   ],
   "tootamine": [
-    { "firma": "WÜRTH AS", "amet": "Laotööline", "aasta": "2024", "kirjeldus": "Komplekteerimine, pakkendamine" },
-    { "firma": "Tariston AS", "amet": "Teetööline", "aasta": "2021", "kirjeldus": "Teedeehitus" }
+    {
+      "firma": "WÜRTH AS",
+      "amet": "Laotööline",
+      "aasta": "2024",
+      "kirjeldus": "Komplekteerimine, pakkendamine"
+    },
+    {
+      "firma": "Tariston AS",
+      "amet": "Teetööline",
+      "aasta": "2021",
+      "kirjeldus": "Teedeehitus"
+    }
   ],
-  "tugevad": ["Õpihimu", "kohusetundlikkus", "kannatlikkus", "meeldib meeskonnatöö"],
-  "norgad": ["Vähe kogemust paljude pinkidega (koolis ainult Haasi freespingid ja treipingid)"],
+  "tugevad": [
+    "Õpihimu",
+    "Kohusetundlikkus",
+    "Kannatlikkus",
+    "Meeldib meeskonnatöö"
+  ],
+  "norgad": [
+    "Vähe kogemust paljude pinkidega (koolis ainult Haasi freespingid ja treipingid)"
+  ],
   "ajateenistus": "Läbitud 2022–2023",
   "praktika": "9.06.2025 – 7.07.2025",
-  "social": {
-    "instagram": "instanupp.png",
-    "facebook": "fbikoon.png"
-  },
   "karussell": [
     "image1.png",
     "image2.png"

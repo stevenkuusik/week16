@@ -5,198 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV – <%= cv.steven %> <%= cv.kuusik %></title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background: #ffffff;
-      margin: 0;
-      padding: 40px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .cv-container {
-      background: #ffffff;
-      width: 1200px;
-      border-radius: 6px;
-      padding: 30px;
-      box-sizing: border-box;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-      border: 2px solid #3da0ff;
-    }
-
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 20px;
-      margin-bottom: 20px;
-    }
-
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    .profile img {
-      width: 70px;
-      height: 70px;
-    }
-    .profile-info h2 {
-      margin: 0;
-      font-size: 22px;
-      font-weight: 700;
-      color: #222;
-    }
-    .profile-info {
-      font-size: 14px;
-      color: #444;
-    }
-    .contact-row {
-      margin-top: 6px;
-    }
-    .contact-row span {
-      margin-right: 15px;
-    }
-
-    .licenses {
-      text-align: right;
-      font-size: 14px;
-      color: #444;
-    }
-    .licenses h3 {
-      margin: 0 0 5px 0;
-      font-size: 16px;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .stars {
-      margin-top: 10px;
-      font-size: 22px;
-      color: #ccc;
-    }
-    .stars .filled {
-      color: gold;
-    }
-
-    .content {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 20px;
-    }
-
-    .left, .right {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .section {
-      background: #f0f0f0;
-      border-radius: 6px;
-      padding: 15px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .section h3 {
-      margin-top: 0;
-      font-size: 16px;
-      font-weight: 600;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 6px;
-      margin-bottom: 10px;
-      color: #333;
-    }
-    .section p {
-      margin: 6px 0;
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .chart-img {
-      width: 100%;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .social {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      margin-top: 50px;
-    }
-    .social img {
-      height: 45px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    .social img:hover {
-      transform: scale(1.05);
-    }
-
-    @media (max-width: 480px) {
-      body {
-        padding: 10px;
-      }
-
-      .cv-container {
-        width: 100%; 
-        padding: 15px;
-      }
-
-      .top {
-        flex-direction: column; 
-        align-items: flex-start;
-      }
-
-      .content {
-        grid-template-columns: 1fr;
-      }
-
-      .profile img {
-        width: 60px;
-        height: 60px;
-      }
-
-      .profile-info h2 {
-        font-size: 18px;
-      }
-
-      .section {
-        padding: 10px;
-      }
-
-      .section h3 {
-        font-size: 14px;
-      }
-
-      .section p {
-        font-size: 13px;
-      }
-
-      .social {
-        justify-content: center;
-        gap: 20px;
-        margin-top: 20px;
-      }
-
-      .social img {
-        height: 35px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <div class="cv-container">
 
     <div class="top">
       <div class="profile">
-        <img src="/<%= cv.profiil %>" alt="Profiil" />
+        <img src="/<%= cv.profiil %>" alt="Profiil">
         <div class="profile-info">
-          <h2><%= cv.nimi %> <%= cv.perekonnanimi %></h2>
+          <h2><%= cv.steven %> <%= cv.kuusik %></h2>
           <div class="contact-row"><%= cv.asukoht %></div>
           <div class="contact-row">
             <span>📞 <%= cv.kontakt.telefon %></span>
@@ -204,11 +22,9 @@
           </div>
           <div class="contact-row">📍 <%= cv.kontakt.aadress %></div>
           <div class="stars">
-            <span class="filled">★</span>
-            <span class="filled">★</span>
-            <span class="filled">★</span>
-            <span class="filled">★</span>
-            <span class="filled">★</span>
+            <% for (let i = 0; i < 5; i++) { %>
+              <span class="filled">★</span>
+            <% } %>
           </div>
         </div>
       </div>
@@ -229,8 +45,8 @@
 
         <div class="section">
           <h3>Arvutioskused</h3>
-          <% cv.oskused.forEach(o => { %>
-            <p><%= o.nimi %> — <%= o.tase %></p>
+          <% cv.arvutioskused.forEach(a => { %>
+            <p><%= a %></p>
           <% }) %>
         </div>
 
@@ -270,11 +86,11 @@
             <p><b>Praktikale võimalik astuda:</b> <%= cv.praktika %></p>
           </div>
           <div class="social">
-             <a href="https://instagram.com" target="_blank">
-                <img src="/<%= cv.social.instagram %>" alt="Instagram">
-             </a>
-                <a href="https://facebook.com" target="_blank">
-             <img src="/<%= cv.social.facebook %>" alt="Facebook">
+            <a href="https://instagram.com" target="_blank">
+              <img src="instanupp.png" alt="Instagram">
+            </a>
+            <a href="https://facebook.com" target="_blank">
+              <img src="fbikoon.png" alt="Facebook">
             </a>
           </div>
         </div>
@@ -282,7 +98,10 @@
     </div>
   </div>
 
-<script>
+  <script>
   window.carouselImages = <%- JSON.stringify(cv.karussell) %>;
-</script>
-<script src="/script.js"></script>
+  </script>
+    <script src="/script.js"></script>
+  </body>
+</html>
+

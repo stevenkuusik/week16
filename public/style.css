@@ -1,141 +1,191 @@
-<!DOCTYPE html>
-<html lang="et">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV – <%= cv.nimi %> <%= cv.perekonnanimi %></title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <div class="cv-container">
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #ffffff;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
 
-    <div class="top">
-      <div class="profile">
-        <img src="spongebob.png" alt="Profiil">
-        <div class="profile-info">
-          <h2><%= cv.nimi %> <%= cv.perekonnanimi %></h2>
+.cv-container {
+  background: #ffffff;
+  width: 1200px;
+  border-radius: 6px;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border: 2px solid #3da0ff;
+}
 
-          <% if (cv.asukoht) { %>
-            <div class="contact-row"><%= cv.asukoht %></div>
-          <% } %>
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
 
-          <div class="contact-row">
-            <% if (cv.kontakt && cv.kontakt.telefon) { %>
-              <span>📞 <%= cv.kontakt.telefon %></span>
-            <% } %>
-            <% if (cv.kontakt && cv.kontakt.email) { %>
-              <span>✉️ <%= cv.kontakt.email %></span>
-            <% } %>
-          </div>
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
-          <% if (cv.kontakt && cv.kontakt.aadress) { %>
-            <div class="contact-row">📍 <%= cv.kontakt.aadress %></div>
-          <% } %>
+.profile img {
+  width: 70px;
+  height: 70px;
+}
 
-          <div class="stars">
-            <% for (let i = 0; i < (cv.tahed || 0); i++) { %>
-              <span class="filled">★</span>
-            <% } %>
-          </div>
-        </div>
-      </div>
+.profile-info h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+}
 
-      <div class="licenses">
-        <h3>Juhiload</h3>
-        <%= (cv.juhiload && cv.juhiload.length ? cv.juhiload.join(", ") : "") %>
-      </div>
-    </div>
+.profile-info {
+  font-size: 14px;
+  color: #444;
+}
 
-    <div class="content">
-      <div class="left">
-        <div class="section">
-          <h3>Keeleoskus</h3>
-          <% (cv.keeled || []).forEach(function(k){ %>
-            <p><%= k %></p>
-          <% }) %>
-        </div>
+.contact-row {
+  margin-top: 6px;
+}
 
-        <div class="section">
-          <h3>Arvutioskused</h3>
-          <% (cv.oskused || []).forEach(function(o){ %>
-            <p><%= o %></p>
-          <% }) %>
-        </div>
+.contact-row span {
+  margin-right: 15px;
+}
 
-        <div class="section">
-          <h3>Huvialad</h3>
-          <% (cv.huvid || []).forEach(function(h){ %>
-            <p><%= h %></p>
-          <% }) %>
-        </div>
+.licenses {
+  text-align: right;
+  font-size: 14px;
+  color: #444;
+}
 
-        <!-- Esmane pilt tuleb JSON-ist (carousel[0]) -->
-        <img
-          id="carousel-img"
-          class="chart-img"
-          src="/<%= (cv.carousel && cv.carousel[0]) ? cv.carousel[0] : '' %>"
-          alt="Pilt">
-        <div class="social"></div>
-      </div>
+.licenses h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
 
-      <div class="margin-right">
-        <div class="section">
-          <h3>Hariduskäik</h3>
-          <% (cv.haridus || []).forEach(function(h){ %>
-            <p><strong><%= h.kool %></strong> — <%= h.aasta %></p>
-          <% }) %>
-        </div>
+.stars {
+  margin-top: 10px;
+  font-size: 22px;
+  color: #ccc;
+}
 
-        <div class="section">
-          <h3>Töökogemus</h3>
-          <% (cv.tootkogemus || []).forEach(function(t){ %>
-            <p>
-              <strong><%= t.ettevote %></strong> — <%= t.amet %> (<%= t.aasta %>)<br>
-              <%= t.kirjeldus %>
-            </p>
-          <% }) %>
-        </div>
+.stars .filled {
+  color: gold;
+}
 
-        <div class="right">
-          <div class="section">
-            <h3>Täiendav info</h3>
-            <% if (cv.taiendav) { %>
-              <% if (cv.taiendav.tugevad) { %>
-                <p><b>Tugevad küljed:</b> <%= cv.taiendav.tugevad %></p>
-              <% } %>
-              <% if (cv.taiendav.norgad) { %>
-                <p><b>Nõrgad küljed:</b> <%= cv.taiendav.norgad %></p>
-              <% } %>
-              <% if (cv.taiendav.ajateenistus) { %>
-                <p><b>Ajateenistus:</b> <%= cv.taiendav.ajateenistus %></p>
-              <% } %>
-              <% if (cv.taiendav.praktika) { %>
-                <p><b>Praktikale võimalik astuda:</b> <%= cv.taiendav.praktika %></p>
-              <% } %>
-            <% } %>
-          </div>
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
 
-          <div class="social">
-            <% if (cv.social && cv.social.instagram) { %>
-              <a href="<%= cv.social.instagram.link %>" target="_blank">
-                <img src="/<%= cv.social.instagram.icon %>" alt="Instagram">
-              </a>
-            <% } %>
-            <% if (cv.social && cv.social.facebook) { %>
-              <a href="<%= cv.social.facebook.link %>" target="_blank">
-                <img src="/<%= cv.social.facebook.icon %>" alt="Facebook">
-              </a>
-            <% } %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+.left, .right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-   <script>
-    window.CAROUSEL_IMAGES = <%- JSON.stringify(cv.carousel || []) %>;
-  </script>
-  <script src="/script.js"></script>
-</body>
-</html>
+.section {
+  background: #f0f0f0;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.section h3 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.section p {
+  margin: 6px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chart-img {
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.social img {
+  height: 45px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.social img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .cv-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .profile img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profile-info h2 {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 10px;
+  }
+
+  .section h3 {
+    font-size: 14px;
+  }
+
+  .section p {
+    font-size: 13px;
+  }
+
+  .social {
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .social img {
+    height: 35px;
+  }
+}
